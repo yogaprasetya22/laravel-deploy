@@ -12,8 +12,15 @@
             "dest": "/api/index.php"
         },
         {
-            "src":"/img/(.*)",
-            "dest":"public/img/"
+            "src": "/img/(.*)",
+            "dest": "/public/img/$1"
+        },
+        {
+            "src": "/(.*)",
+            "headers": {
+                "Location": "https://laravel-deploy-jagress.vercel.app/$1"
+            },
+            "status": 301
         }
     ],
     "env": {
